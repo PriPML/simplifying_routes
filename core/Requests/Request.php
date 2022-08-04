@@ -1,6 +1,7 @@
 <?php
 
-class Request {
+class Request
+{
 
     public $request;
 
@@ -18,7 +19,12 @@ class Request {
         return $this->request;
     }
 
-
+    public function searchKey()
+    {
+        if ($request->has($key)) {
+            return [
+                'success' => true,
+            ];
+        };
+    }
 }
-
-   
