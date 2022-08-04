@@ -18,13 +18,4 @@ class Request
 
         return $this->request;
     }
-
-    public function searchKey()
-    {
-        if ($request->has($key)) {
-            return [
-                'success' => true,
-            ];
-        };
-    }
 }
