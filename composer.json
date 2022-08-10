@@ -1,0 +1,20 @@
+{
+    "name": "pripml/simple_route",
+    "description": "resolve requests in a simple way",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Pripml\\SimpleRoute\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PriPML",
+            "email": "priscila_pm@live.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.3 || ^8.0"
+    }
+}

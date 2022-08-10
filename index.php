@@ -1,9 +1,12 @@
 <?php
-include "core/Requests/Request.php";
+
+include "vendor/autoload.php";
+
+use Pripml\SimpleRoute\Core\Requests\Request;
 
 $request = new Request();
-print_r($request->input('idade'));
-die;
+print_r('<pre>');
+print_r($request->server());
 
 ?>
 
