@@ -4,7 +4,7 @@ namespace Pripml\SimpleRoute\Core\Routes;
 class Route implements RouteInterface {
     /**
     * get
-    * Extracting informations and send to the class and method was chosen 
+    * Extracting informations and sending it to the chosen class and method 
     * @param string $route
     * @param array $class_method - [0] = class ,[1] = method
     * @return void
@@ -18,7 +18,7 @@ class Route implements RouteInterface {
 
    /**
     * post
-    * Extracting informations and send to the class and method was chosen 
+    * Extracting informations and sending it to the chosen class and method 
     * @param string $route
     * @param array $class_method
     * @return void
@@ -30,7 +30,7 @@ class Route implements RouteInterface {
 
    /**
     * patch
-    * Extracting informations and send to the class and method was chosen 
+    * Extracting informations and sending it to the chosen class and method 
     * @param string $route
     * @param array $class_method
     * @return void
@@ -42,7 +42,7 @@ class Route implements RouteInterface {
 
    /**
     * put
-    * Extracting informations and send to the class and method was chosen 
+    * Extracting informations and sending it to the chosen class and method 
     * @param string $route
     * @param array $class_method
     * @return void
@@ -54,7 +54,7 @@ class Route implements RouteInterface {
 
    /**
     * delete
-    * Extracting informations and send to the class and method was chosen 
+    * Extracting informations and sending it to the chosen class and method 
     * @param string $route
     * @param array $class_method
     * @return void
