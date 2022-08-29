@@ -1,6 +1,9 @@
 <?php
 namespace Pripml\SimpleRoute\Core\Routes;
 
+use Pripml\SimpleRoute\core\Requests\Request;
+use Pripml\SimpleRoute\core\Routes\RouteService;
+
 class Route implements RouteInterface {
     /**
     * get
@@ -11,10 +14,24 @@ class Route implements RouteInterface {
     */
    static function get(string $route, array $class_method)
    {
-        $class = new $class_method[0];
-        $method = $class_method[1];
-        return $class->{$method}();
-   }
+     if (!self::routeMatch($route)) {
+          return;
+     }
+
+     $existeParametro = RouteService::checkIfRouteParams($route);
+     //2. extrair o valor caso exista o parametro da request baseado no identificador da rota
+     //3. chamar o metodo desejado passando o valro extraido como parametro do metodo
+
+     $valorParametro = false;
+     $class = new $class_method[0];
+     $method = $class_method[1];
+     if (!$existeParametro) {
+          return $class->{$method}();
+     }
+
+     return $class->{$method}($valorParametro);
+}
+
 
    /**
     * post
@@ -75,4 +92,24 @@ class Route implements RouteInterface {
    {
 
    }
+
+    /**
+      * routeMatch
+      * Check if the route clled is the same of web route
+      * @param string $route
+      * @return bool
+      */
+      static function routeMatch(string $route): bool
+      {
+ 
+           $request = new Request();
+           $cleanRoute = RouteService::extractRoute($route);
+           $cleanRequestedRoute = RouteService::extractRoute($request->path());
+      
+           if ($cleanRequestedRoute != $cleanRoute) {
+                return false;
+           }
+           //verificar se a rota enviada na requisição é a mesma chamada no arquivo ropta
+           return true;
+      }
 }

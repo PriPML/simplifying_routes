@@ -19,8 +19,6 @@ class LoginController {
         return "teste Post";
     }
 
-    
-
     public function update()
     {
         return "teste Update";
